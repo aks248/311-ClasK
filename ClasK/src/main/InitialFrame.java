@@ -8,19 +8,21 @@ package main;
 import java.awt.*;
 import javax.swing.*;
 
-public class ClassJFrame extends JFrame {
-    private ClassJPanel cjp;
+public class InitialFrame extends JFrame {
+    private InitialPanel classPanel;
     private View view;
     
-    public ClassJFrame(View a) {
+
+    
+    public InitialFrame(View a) {
         super("ClasK");
         view = a;
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(1200, 960);
         setResizable(true);
         setVisible(true);
-        cjp = new ClassJPanel(this);
-        add(cjp);
+        classPanel = new InitialPanel(this);
+        add(classPanel);
         
         /*
         Sets the appearance of the interface to match the base OS one, if possible
@@ -30,10 +32,11 @@ public class ClassJFrame extends JFrame {
         } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
+        classPanel.repaintAndValidate();
     }
     
-    public ClassJPanel getClassJPanel() {
-        return cjp;
+    public InitialPanel getInitialPanel() {
+        return classPanel;
     }
     
     public Model getModel() {
