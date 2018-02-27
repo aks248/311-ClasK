@@ -12,7 +12,7 @@ public class View {
     
     public View(Model m) {
         mod = m;
-        classFrame = new InitialFrame(this);
+        classFrame = new InitialFrame(this); //Inserting self-reference allows subclasses to access Model via View.getModel()
     }
     
     public InitialFrame getInitialFrame() {

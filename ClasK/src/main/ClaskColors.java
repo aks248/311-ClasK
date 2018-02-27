@@ -7,6 +7,9 @@ package main;
 
 import java.awt.Color;
 
+/**
+ * A list of publicly accessible colors for standardization purposes
+ */
 public class ClaskColors {
     public static final Color CLASK_GREY = new Color(89, 89, 89);
     public static final Color CLASK_WHITE = new Color(217, 217, 217);
