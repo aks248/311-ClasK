@@ -1,22 +1,25 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package main;
 
-//@author Zach Ressler
-
-public class Student extends User {
+public class Instructor extends User{
     
     String fName;
     String lName;
     String usrName;
     String passwrd;
-    String studentNumber;
+    String emplNumber;
     
-    Student(String first, String last, String user, String pass, String studentNum) {
+    Instructor(String first, String last, String user, String pass, String empNum) {
         super(first, last, user, pass);
         fName = first;
         lName = last;
         usrName = user;
         passwrd = pass;
-        studentNumber = studentNum;   
+        emplNumber = empNum;   
     }
     
     @Override
@@ -31,4 +34,5 @@ public class Student extends User {
         
         return result;
     }
+       
 }
