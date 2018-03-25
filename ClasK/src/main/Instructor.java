@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
 public class Instructor extends User{
@@ -32,6 +27,11 @@ public class Instructor extends User{
         }
         else;
         
+        return result;
+    }
+    
+    public String getInstructorName(){
+        String result = (fName + " " + lName);
         return result;
     }
        

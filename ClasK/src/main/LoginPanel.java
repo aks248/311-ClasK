@@ -19,7 +19,7 @@ public class LoginPanel extends JPanel{
     JPasswordField pswdText;
     JLabel userLabel, pswdLabel, stepLabel, msgLabel;
     GridBagConstraints lpc = new GridBagConstraints();
-    //int v, h;
+    
     
     
     LoginPanel(){
@@ -113,9 +113,6 @@ public class LoginPanel extends JPanel{
     }
     
     public void getLoginFailed(){
-        //this.msgLabel.setSize(20,70);
-        //this.msgLabel.setText("Invalid Username or Password");
-        //this.msgLabel.setForeground(Color.RED);
         JOptionPane.showMessageDialog(this,"Invalid Username or Password\n" + "Please try again.","Login Error",JOptionPane.ERROR_MESSAGE);
         this.repaint();
         

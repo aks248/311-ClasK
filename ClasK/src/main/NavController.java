@@ -71,6 +71,7 @@ class NavController {
                         for(int i = 0; i < studentNumber; i++) {
                             if(model.getStudentById(i).authenticate(userEntered, passEntered))
                             {
+                                model.currentUser = model.getStudentById(i).getStudentName();
                                 sValid = true;
                             }
                         }
@@ -90,6 +91,7 @@ class NavController {
                         for(int i = 0; i < instructorNumber; i++) {
                             if(model.getInstructorById(i).authenticate(userEntered, passEntered))
                             {
+                                model.currentUser = model.getInstructorById(i).getInstructorName();
                                 iValid = true;
                             }
                         }
@@ -134,7 +136,6 @@ class NavController {
                     String roomPassEntered;
                     roomSelected = (String) view.initFrame.iPanel.classChooser.roomNumCombo.getSelectedItem();
                     roomPassEntered = view.initFrame.iPanel.classChooser.lectPassText.getText();
-                    System.out.println(roomSelected+" "+roomPassEntered);
                     int courseNumber = model.getCourses().length;
                     boolean rValid = false;
                     
@@ -142,13 +143,13 @@ class NavController {
                         if(model.getCourseById(i).authenticate(roomSelected, roomPassEntered))
                         {
                             rValid = true;
+                            model.roomNumber = roomSelected;
                         }
                     }
                     if(rValid){
                             view.initFrame.iPanel.remove(view.initFrame.iPanel.classChooser);
                             view.initFrame.iPanel.remove(view.initFrame.iPanel.wp);
                             view.initFrame.iPanel.getRoomValidated();
-                            return;
                     }
                     else{ 
                         view.initFrame.iPanel.classChooser.getRoomLoginFailed();

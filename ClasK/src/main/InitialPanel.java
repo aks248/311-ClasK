@@ -65,7 +65,7 @@ class InitialPanel extends JPanel {
     public void getRoomValidated(){
         
         topPanel = new TopicPanel();
-        add(topPanel, BorderLayout.NORTH);
+        add(topPanel, BorderLayout.CENTER);
         this.repaint();
         revalidate();
         this.setVisible(true);

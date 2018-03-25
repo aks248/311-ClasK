@@ -23,7 +23,6 @@ public class Course {
         String room = roomNum;
         String password = crsPswd;
         
-        System.out.println(crsPassword+" "+rmNum+"passed:"+room+" "+password);
         boolean result = false;
         if((room.equals(rmNum)) && (password.equals(crsPassword))){
             result = true;
@@ -33,4 +32,10 @@ public class Course {
         return result;
     }
     
+    public String getRoomNum(){
+        return rmNum;
+    }
+    
 }
+
+    

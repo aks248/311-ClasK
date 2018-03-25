@@ -31,4 +31,9 @@ public class Student extends User {
         
         return result;
     }
+    
+    public String getStudentName(){
+        String result = (fName + " " + lName);
+        return result;
+    }
 }

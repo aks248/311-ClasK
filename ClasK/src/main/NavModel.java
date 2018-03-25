@@ -6,6 +6,10 @@ class NavModel {
     private Instructor[] instructors;
     private Course[] courses;
     String userType;
+    String currentUser;
+    String currentInstructor;
+    String roomNumber;
+            
 
     NavModel() {
         students = new Student[] { //Manual student registration; testing purposes
@@ -19,7 +23,7 @@ class NavModel {
         };
          
         courses = new Course[] {
-            new Course("IST 311", "3", "room3IST311")
+            new Course("IST 311", "3", "room3")
         };
     }
          
