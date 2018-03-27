@@ -1,44 +1,77 @@
 package main;
 
-/**
- *
- * @author Adam
- */
+import java.awt.BorderLayout;
+import java.awt.Color;
+import javax.swing.JPanel;
 
-import java.awt.*;
-import javax.swing.*;
+class InitialPanel extends JPanel {
+    
+    LoginPanel login;
+    ClassPanel classChooser;
+    UserSelectPanel userSelect;
+    WelcomePanel wp;
+    TopicPanel topPanel;
 
-public class InitialPanel extends JPanel {
-    
-    private InitialFrame cjf;
-    private LoginPanel lp;
-    private TopicViewPanel tvp;
-    
-    public InitialPanel(InitialFrame cjf) {
+    InitialPanel(){
         super();
-        this.cjf = cjf;
-        setLayout(new GridLayout(1,1));
-        lp = new LoginPanel(this);
-        tvp = new TopicViewPanel(this);
-        loadPanel(lp);
+        this.setBackground(Color.BLUE);
+        setLayout(new BorderLayout());
+        wp = new WelcomePanel();
+        add(wp, BorderLayout.NORTH);
+        
+        this.repaint();
+        this.setVisible(true);
+        
+        
     }
     
-    public void loadPanel(JPanel panel) {
-        removeAll();
-        add(panel);
-        repaintAndValidate();
-    }
-    
-    public LoginPanel getLoginPanel() {
-        return lp;
-    }
-    
-    public TopicViewPanel getTopicViewPanel() {
-        return tvp;
-    }
-    
-    public void repaintAndValidate() {
-        repaint();
+    public void getLogin(){
+        
+        
+        login = new LoginPanel();
+        
+        add(login, BorderLayout.CENTER);
+        this.repaint();
         revalidate();
+        this.setVisible(true);
+        
     }
+    
+    public void getLoginValidated(){
+        
+        classChooser = new ClassPanel();
+        
+        add(classChooser, BorderLayout.CENTER);
+        this.repaint();
+        revalidate();
+        this.setVisible(true);
+    }
+    
+    public void getUserSelect(){
+     
+        
+        
+        userSelect = new UserSelectPanel();
+        
+        add(userSelect, BorderLayout.CENTER);
+        this.repaint();
+        revalidate();
+        this.setVisible(true);
+    }
+    
+    public void getRoomValidated(){
+        
+        topPanel = new TopicPanel();
+        add(topPanel, BorderLayout.CENTER);
+        this.repaint();
+        revalidate();
+        this.setVisible(true);
+        
+    }
+    
+    
+          
 }
+
+    
+

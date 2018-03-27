@@ -1,46 +1,25 @@
 package main;
 
-/**
- *
- * @author Adam
- */
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
 
-import java.awt.*;
-import javax.swing.*;
-
-public class InitialFrame extends JFrame {
-    private InitialPanel classPanel;
-    private View view;
+class InitialFrame extends JFrame {
     
-
+    InitialPanel iPanel;
     
-    public InitialFrame(View a) {
-        super("ClasK");
-        view = a;
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(1200, 960);
-        setResizable(true);
-        setVisible(true);
-        classPanel = new InitialPanel(this);
-        add(classPanel);
+    public InitialFrame(){
+        super("Clask");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        /*
-        Sets the appearance of the interface to match the base OS one, if possible
-        */
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        classPanel.repaintAndValidate();
+        //sets to full screen windowed for any screen resolution
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds(0,0,screenSize.width, screenSize.height);
+        
+        this.setBackground(Color.lightGray);
+        iPanel = new InitialPanel();
+        add(iPanel);
+        this.setVisible(true);        
     }
-    
-    public InitialPanel getInitialPanel() {
-        return classPanel;
-    }
-    
-    public Model getModel() {
-        return view.getModel();
-    }
-    
 }

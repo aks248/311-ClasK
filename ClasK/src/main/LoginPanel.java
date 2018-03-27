@@ -1,106 +1,120 @@
 package main;
 
-/**
- *
- * @author Adam
- */
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
-import java.awt.*;
-import javax.swing.*;
-
-public class LoginPanel extends JPanel {
+public class LoginPanel extends JPanel{
     
-    private InitialPanel classPanel;
-    private JLabel title, logonLabel, userLabel, passLabel, idLabel;
-    private JTextField userField, passField, idField;
-    private JPanel logonPanel, submitPanel;
-    private JButton submit;
+    JButton loginBtn, backBtn;
+    JTextField userText;
+    JPasswordField pswdText;
+    JLabel userLabel, pswdLabel, stepLabel, msgLabel;
+    GridBagConstraints lpc = new GridBagConstraints();
     
-    public LoginPanel(InitialPanel classPanel) {
-        this.classPanel = classPanel;
-        setBackground(ClaskColors.CLASK_GREY);
-        setLayout(new GridLayout(4, 1));
+    
+    
+    LoginPanel(){
+        super();
+        this.setLayout(new GridBagLayout());
+        this.setSize (500, 350);
         
-        title = new JLabel("Welcome to ClasK", SwingConstants.CENTER);
-        title.setForeground(ClaskColors.CLASK_WHITE);
-        title.setFont(new Font("Serif", Font.PLAIN, 56));
+        this.setBackground(Color.lightGray);
         
-        logonLabel = new JLabel("Student Logon", SwingConstants.CENTER);
-        logonLabel.setForeground(ClaskColors.CLASK_WHITE);
+        loginBtn = new JButton("Login");
+        backBtn = new JButton("Back");
         
-        logonPanel = new JPanel();
-        logonPanel.setBackground(ClaskColors.CLASK_GREY);
-        logonPanel.setLayout(new GridLayout(6, 1));
+        userText = new JTextField();
+        pswdText = new JPasswordField();
         
-        userLabel = new JLabel("Username:", SwingConstants.CENTER);
-        userLabel.setForeground(ClaskColors.CLASK_WHITE);
+        msgLabel = new JLabel("Login to continue");
+        userLabel = new JLabel("Username");
+        pswdLabel = new JLabel("Password");
+        stepLabel = new JLabel("ClasK");
         
-        userField = new JTextField();
-        userField.setHorizontalAlignment(JTextField.CENTER);
+        Font labelsFont = new Font("Serif", Font.PLAIN, 25);
+        Font welcomeFont = new Font("Serif", Font.BOLD, 50);
+        stepLabel.setFont(welcomeFont);
+        msgLabel.setFont(labelsFont);
+        userLabel.setFont(labelsFont);
+        pswdLabel.setFont(labelsFont);
+        loginBtn.setFont(labelsFont);
+        backBtn.setFont(labelsFont);
         
-        passLabel = new JLabel("Password:", SwingConstants.CENTER);
-        passLabel.setForeground(ClaskColors.CLASK_WHITE);
+        stepLabel.setSize(30, 20);
+        msgLabel.setSize(30, 20);
+        userLabel.setSize(30, 20);
+        pswdLabel.setSize(30, 20);
+        userText.setSize(30, 30);
+        pswdText.setSize(30, 30);
         
-        passField = new JTextField();
-        passField.setHorizontalAlignment(JTextField.CENTER);
+        loginBtn.setSize(30, 25);
+        backBtn.setSize(30, 25);
         
-        idLabel = new JLabel("Room ID:", SwingConstants.CENTER);
-        idLabel.setForeground(ClaskColors.CLASK_WHITE);
+       
+        lpc.insets = new Insets(10,10,10,10);
+        lpc.gridx = 1;
+        lpc.gridy = 0;
+        lpc.gridwidth = 2;
+        this.add(stepLabel, lpc);
         
-        idField = new JTextField();
-        idField.setHorizontalAlignment(JTextField.CENTER);
         
-        logonPanel.add(userLabel);
-        logonPanel.add(userField);
-        logonPanel.add(passLabel);
-        logonPanel.add(passField);
-        logonPanel.add(idLabel);
-        logonPanel.add(idField);
+        lpc.insets = new Insets(10,10,10,10);
+        lpc.gridx = 1;
+        lpc.gridy = 2;
+        lpc.gridwidth = 2;
+        this.add(msgLabel, lpc);
         
-        submitPanel = new JPanel();
-        submitPanel.setBackground(ClaskColors.CLASK_GREY);
-        submitPanel.setLayout(new GridBagLayout());
-        GridBagConstraints c = new GridBagConstraints();
-        c.fill = GridBagConstraints.CENTER;
-        c.weightx = 1;
-        c.gridx = 0;
-        c.gridy = 0;
-        c.ipadx = 300;
+       
+        lpc.insets = new Insets(10,10,10,10);
+        lpc.gridx = 0;
+        lpc.gridy = 4;
+        this.add(userLabel, lpc);
         
-        submit = new JButton("Login");
-        submitPanel.add(submit, c);
         
-        add(title);
-        add(logonLabel);
-        add(logonPanel);
-        add(submitPanel);
+        lpc.insets = new Insets(10,10,10,10);
+        lpc.gridx = 0;
+        lpc.gridy = 6;
+        this.add(pswdLabel, lpc);
         
-        classPanel.repaintAndValidate();
+        lpc.fill = GridBagConstraints.BOTH;
+        lpc.insets = new Insets(10,10,10,10);
+        lpc.gridx = 2;
+        lpc.gridy = 4;
+        this.add(userText, lpc);
+        
+        lpc.fill = GridBagConstraints.BOTH;
+        lpc.insets = new Insets(10,10,10,10);
+        lpc.gridx = 2;
+        lpc.gridy = 6;
+        this.add(pswdText, lpc);
+        
+        
+        lpc.insets = new Insets(10,10,10,10);
+        lpc.gridx = 2;
+        lpc.gridy = 8;
+        this.add(loginBtn, lpc);
+        
+       
+        lpc.insets = new Insets(10,10,10,10);
+        lpc.gridx = 0;
+        lpc.gridy = 8;
+        this.add(backBtn, lpc);
+        repaint();
+        this.setVisible(true);
     }
     
-    public void login() {
-        classPanel.loadPanel(classPanel.getTopicViewPanel());
+    public void getLoginFailed(){
+        JOptionPane.showMessageDialog(this,"Invalid Username or Password\n" + "Please try again.","Login Error",JOptionPane.ERROR_MESSAGE);
+        this.repaint();
+        
     }
-    
-    public void failLogin() {
-        logonLabel.setForeground(ClaskColors.CLASK_RED);
-        logonLabel.setText("Invalid Username or Password");
-    }
-
-    public JTextField getUserField() {
-        return userField;
-    }
-
-    public JTextField getPassField() {
-        return passField;
-    }
-
-    public JTextField getIdField() {
-        return idField;
-    }
-
-    public JButton getSubmit() {
-        return submit;
-    }
-    
 }
