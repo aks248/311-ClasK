@@ -5,8 +5,6 @@
  */
 package clask;
 
-import model.Instructor;
-import model.Student;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -35,18 +33,17 @@ public class FXMLDocumentController implements Initializable {
     private void handleStudentLoginButtonAction(ActionEvent event) throws IOException {
         //model.userType = "s";
         Parent loginPageParent = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        Scene loginPageScene = new Scene(loginPageParent, 600, 400);
+        Scene loginPageScene = new Scene(loginPageParent, 1200, 800);
         Stage app_Stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_Stage.setScene(loginPageScene);
         app_Stage.show();
-        //System.out.println(model.userType);
     }
     
     @FXML
     private void handleInstructorLoginButtonAction(ActionEvent event) throws IOException {
         //model.userType = "i";
         Parent loginPageParent = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        Scene loginPageScene = new Scene(loginPageParent, 600, 400);
+        Scene loginPageScene = new Scene(loginPageParent, 1200, 800);
         Stage app_Stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_Stage.setScene(loginPageScene);
         app_Stage.show();
@@ -55,7 +52,16 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleLoginBackButtonAction(ActionEvent event) throws IOException {
         Parent loginPageParent = FXMLLoader.load(getClass().getResource("UserSelect.fxml"));
-        Scene loginPageScene = new Scene(loginPageParent, 600, 400);
+        Scene loginPageScene = new Scene(loginPageParent, 1200, 800);
+        Stage app_Stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_Stage.setScene(loginPageScene);
+        app_Stage.show();
+    }
+    
+    @FXML
+    private void handleSignInButtonAction(ActionEvent event) throws IOException {
+        Parent loginPageParent = FXMLLoader.load(getClass().getResource("StudentView.fxml"));
+        Scene loginPageScene = new Scene(loginPageParent, 1200, 800);
         Stage app_Stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_Stage.setScene(loginPageScene);
         app_Stage.show();

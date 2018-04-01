@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="clask.FXMLDocumentController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clask.FXMLDocumentController">
    <children>
    
    
@@ -27,12 +27,13 @@
        
        <HBox alignment="bottom_right" spacing="70" GridPane.columnIndex="2" GridPane.rowIndex="4">
           <children>
-              <Button text="Back" onAction="#handleLoginBackButtonAction"/>
-              <Button text="Sign In" />
+              <Button onAction="#handleLoginBackButtonAction" text="Back" />
+              <Button onAction="#handleSignInButtonAction" text="Sign In" />
           </children>
    </HBox>
    </children>
    <columnConstraints>
+      <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>

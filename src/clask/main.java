@@ -29,7 +29,7 @@ public class main extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("UserSelect.fxml"));
         stage.setTitle("Clask");
-        Scene scene = new Scene(root,600,400);
+        Scene scene = new Scene(root,1200,800);
         
         stage.setScene(scene);
         stage.show();
