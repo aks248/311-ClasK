@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clask.FXMLDocumentController">
+<GridPane alignment="center" hgap="10" styleClass="root" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clask.FXMLLoginController">
    <children>
    
         <Label text="Welcome to Clask!" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="0">
@@ -25,7 +25,7 @@
        <HBox alignment="bottom_right" spacing="70" GridPane.columnIndex="2" GridPane.rowIndex="5">
        <children>
               <Button onAction="#handleStudentLoginButtonAction" text="StudentLogin" />
-              <Button onAction="#handleInstructorLoginButtonAction" text="InstructorLogin"/>
+              <Button onAction="#handleInstructorLoginButtonAction" text="InstructorLogin" />
        </children>
    </HBox>
    
@@ -34,8 +34,10 @@
       <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints />
+      <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
+      <RowConstraints />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />

@@ -17,17 +17,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+
 /**
  * FXML Controller class
  *
  * @author jr110
  */
-public class StudentViewController implements Initializable {
-    
+public class InstructorViewController implements Initializable {
     
     private static ClaskApp mainInstance;
-    
-    
     
     @FXML
     private Label userLabel;
@@ -36,35 +34,30 @@ public class StudentViewController implements Initializable {
     @FXML
     private Label roomLabel;
     
-        
-    public StudentViewController(){
+    public InstructorViewController(){
         mainInstance = ClaskApp.getInstance();
-        
     }
+
+    /**
+     * Initializes the controller class.
+     * @param url
+     * @param rb
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        userLabel.setText(mainInstance.getCurrentUser());
+        courseLabel.setText(mainInstance.getCurrentCourse());
+        roomLabel.setText("Room #" + mainInstance.getCurrentRoomNumber());
+    } 
     
     @FXML
-    private void handleLogOutButtonAction(ActionEvent event) throws IOException {
+    private void handleInstructorLogOutButtonAction(ActionEvent event) throws IOException {
        Parent loginPageParent = FXMLLoader.load(getClass().getResource("/view/UserSelect.fxml"));
                Scene loginPageScene = new Scene(loginPageParent, 1200, 800);
                Stage app_Stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                app_Stage.setScene(loginPageScene);
                app_Stage.show();
     }
-
-    /**
-     * Initializes the controller class.
-     * 
-     * 
-     * @param url
-     * @param rb
-     */    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        userLabel.setText(mainInstance.getCurrentUser());
-        courseLabel.setText(mainInstance.getCurrentCourse());
-        roomLabel.setText("Room #" + mainInstance.getCurrentRoomNumber());
-    }  
     
-    
-       
 }

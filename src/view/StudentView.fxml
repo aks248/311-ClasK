@@ -13,51 +13,51 @@
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
-            <MenuBar>
-              <menus>
-                <Menu mnemonicParsing="false" text="File">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-              </menus>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </MenuBar>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="ClasK - Student View" textFill="#2709bc" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
             <HBox spacing="20.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="UserName" HBox.hgrow="ALWAYS">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Change Room">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="userLabel" alignment="CENTER" contentDisplay="CENTER" text="UserName" textFill="#fcf9f9" HBox.hgrow="ALWAYS">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="10.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
-                     <padding>
-                        <Insets right="60.0" />
-                     </padding>
                   </Label>
-                  <Label text="Course" HBox.hgrow="ALWAYS">
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="courseLabel" alignment="CENTER" contentDisplay="CENTER" text="Course" textFill="#f8f6f6" HBox.hgrow="ALWAYS">
                      <HBox.margin>
-                        <Insets />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                   <Region HBox.hgrow="ALWAYS" />
-                  <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleLogOutButtonAction" text="Log out">
+                  <Label fx:id="roomLabel" alignment="CENTER" contentDisplay="CENTER" text="Room" textFill="#fcf9f9" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleLogOutButtonAction" text="Log out">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin></Button>
@@ -93,11 +93,11 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                <children> 
-                  <RadioButton fx:id="rb1Y" mnemonicParsing="false" text="Understand">
+                  <RadioButton fx:id="rb1Y" mnemonicParsing="false" text="Understand" textFill="#0aee0a">
                      <toggleGroup>
                         <ToggleGroup fx:id="topic1Group" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="rb1N" mnemonicParsing="false" selected="true" text="Not Understand" toggleGroup="$topic1Group" />  
+                  <RadioButton fx:id="rb1N" mnemonicParsing="false" selected="true" text="Not Understand" textFill="#fcf8f8" toggleGroup="$topic1Group" />  
                </children>
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -108,11 +108,11 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="1">
                <children>
-                  <RadioButton fx:id="rb2Y" mnemonicParsing="false" text="Understand">
+                  <RadioButton fx:id="rb2Y" mnemonicParsing="false" text="Understand" textFill="#04f244">
                      <toggleGroup>
                         <ToggleGroup fx:id="topic2Group" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="rb2N" mnemonicParsing="false" selected="true" text="Not Understand" toggleGroup="$topic2Group" />
+                  <RadioButton fx:id="rb2N" mnemonicParsing="false" selected="true" text="Not Understand" textFill="#fcfafa" toggleGroup="$topic2Group" />
                </children>
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -123,11 +123,11 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="2">
                <children>
-                  <RadioButton fx:id="rb3Y" mnemonicParsing="false" text="Understand">
+                  <RadioButton fx:id="rb3Y" mnemonicParsing="false" text="Understand" textFill="#03fc6f">
                      <toggleGroup>
                         <ToggleGroup fx:id="topic3Group" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="rb3N" mnemonicParsing="false" selected="true" text="Not Understand" toggleGroup="$topic3Group" />
+                  <RadioButton fx:id="rb3N" mnemonicParsing="false" selected="true" text="Not Understand" textFill="#f8f6f6" toggleGroup="$topic3Group" />
                </children>
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -138,11 +138,11 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="3">
                <children>
-                  <RadioButton fx:id="rb4Y" mnemonicParsing="false" text="Understand">
+                  <RadioButton fx:id="rb4Y" mnemonicParsing="false" text="Understand" textFill="#05f84e">
                      <toggleGroup>
                         <ToggleGroup fx:id="topic4Group" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="rb4N" mnemonicParsing="false" selected="true" text="Not Understand" toggleGroup="$topic4Group" />
+                  <RadioButton fx:id="rb4N" mnemonicParsing="false" selected="true" text="Not Understand" textFill="#fcfafa" toggleGroup="$topic4Group" />
                </children>
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -153,11 +153,11 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="4">
                <children>
-                  <RadioButton fx:id="rb5Y" mnemonicParsing="false" text="Understand">
+                  <RadioButton fx:id="rb5Y" mnemonicParsing="false" text="Understand" textFill="#03f855">
                      <toggleGroup>
                         <ToggleGroup fx:id="topic5Group" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="rb5N" mnemonicParsing="false" selected="true" text="Not Understand" toggleGroup="$topic5Group" />
+                  <RadioButton fx:id="rb5N" mnemonicParsing="false" selected="true" text="Not Understand" textFill="#f8f6f6" toggleGroup="$topic5Group" />
                </children>
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -168,11 +168,11 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="5">
                <children>
-                  <RadioButton fx:id="rb6Y" mnemonicParsing="false" text="Understand">
+                  <RadioButton fx:id="rb6Y" mnemonicParsing="false" text="Understand" textFill="#03f82c">
                      <toggleGroup>
                         <ToggleGroup fx:id="topic6Group" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="rb6N" mnemonicParsing="false" selected="true" text="Not Understand" toggleGroup="$topic6Group" />
+                  <RadioButton fx:id="rb6N" mnemonicParsing="false" selected="true" text="Not Understand" textFill="#fcf9f9" toggleGroup="$topic6Group" />
                </children>
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -183,11 +183,11 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="6">
                <children>
-                  <RadioButton fx:id="rb7Y" mnemonicParsing="false" text="Understand">
+                  <RadioButton fx:id="rb7Y" mnemonicParsing="false" text="Understand" textFill="#02fc5e">
                      <toggleGroup>
                         <ToggleGroup fx:id="topic7Group" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="rb7N" mnemonicParsing="false" selected="true" text="Not Understand" toggleGroup="$topic7Group" />
+                  <RadioButton fx:id="rb7N" mnemonicParsing="false" selected="true" text="Not Understand" textFill="#f8f6f6" toggleGroup="$topic7Group" />
                </children>
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -198,11 +198,11 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="7">
                <children>
-                  <RadioButton fx:id="rb8Y" mnemonicParsing="false" text="Understand">
+                  <RadioButton fx:id="rb8Y" mnemonicParsing="false" text="Understand" textFill="#04ff4f">
                      <toggleGroup>
                         <ToggleGroup fx:id="topic8Group" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="rb8N" mnemonicParsing="false" selected="true" text="Not Understand" toggleGroup="$topic8Group" />
+                  <RadioButton fx:id="rb8N" mnemonicParsing="false" selected="true" text="Not Understand" textFill="#f8f7f7" toggleGroup="$topic8Group" />
                </children>
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -305,14 +305,14 @@
          <children>
             <Button mnemonicParsing="false" text="Email" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Button mnemonicParsing="false" text="Contact" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="171.0" text="Question Submit" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="171.0" text="Question Submit" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding></Button>
-            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="171.0" text="Answer Submit" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="171.0" text="Answer Submit" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
@@ -321,8 +321,8 @@
                </padding></Button>
             <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Help" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="After Class" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <TextArea prefHeight="30.0" prefWidth="138.0" GridPane.columnSpan="4" GridPane.rowSpan="2" />
-            <TextArea prefHeight="200.0" prefWidth="200.0" promptText="-Enter question or answer here-" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowSpan="2" />
+            <TextArea prefHeight="30.0" prefWidth="138.0" promptText="-notification area-" wrapText="true" GridPane.columnSpan="4" GridPane.rowSpan="2" />
+            <TextArea fx:id="messageField" prefHeight="200.0" prefWidth="200.0" promptText="-Enter question or answer here-" wrapText="true" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowSpan="2" />
          </children>
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -334,15 +334,15 @@
    </bottom>
    <right>
       <ScrollPane prefHeight="576.0" prefWidth="586.0" BorderPane.alignment="CENTER">
-         <content>
-            <ListView prefHeight="583.0" prefWidth="575.0" />
-         </content>
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
+         <content>
+            <TextArea fx:id="messageArea" prefHeight="597.0" prefWidth="577.0" wrapText="true" />
+         </content>
       </ScrollPane>
    </right>
 </BorderPane>
