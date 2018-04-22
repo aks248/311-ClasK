@@ -50,8 +50,8 @@ public class LoginController
     @FXML
     public void authenticateUser() {
         
-        //mainInstance.setCurrentUser(getStudentById(i).getStudentName()); 
-        //mainInstance.setUserFirstName(getStudentById(i).getFirstName());
+        errorMessageUser.setText("");
+        errorMessagePass.setText("");
 
         String user_input = usernameField.getText();
         String pass_input = passwordField.getText();
@@ -75,7 +75,7 @@ public class LoginController
                 userFlag = true;
             } 
          else {
-            errorMessageUser.setText("");
+            //errorMessageUser.setText("");
             //errorMessagePass.setText("");
         }
 

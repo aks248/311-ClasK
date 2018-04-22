@@ -65,6 +65,9 @@ public class CreateCourseController {
     public boolean validateCourse() {
         setRoomNum((String) getCreateCourseRoom().getSelectionModel().getSelectedItem());
         boolean flag = false;
+        getErrorCourseName().setText("");
+        getErrorPassword().setText("");
+        getErrorConfirmPass().setText("");
         
         setCourseName(getCreateCourseName().getText());
         if ((getCourseName().length() == 0) || (getCourseName().equals(""))) {
@@ -78,7 +81,7 @@ public class CreateCourseController {
             getErrorCourseName().setText("ERROR: Course name already exists.");
             flag = true;
         } else {
-            getErrorCourseName().setText("");
+            //getErrorCourseName().setText("");
         }
         
         setPassword(getCreateCoursePswd().getText());
@@ -90,7 +93,7 @@ public class CreateCourseController {
             flag = true;
         
         } else {
-            getErrorPassword().setText("");
+            //getErrorPassword().setText("");
         }
 
         setConfirmPass(getCreateConfirmPass().getText());
@@ -99,7 +102,7 @@ public class CreateCourseController {
             flag = true;
         
         } else {
-            getErrorConfirmPass().setText("");
+            //getErrorConfirmPass().setText("");
         }
         if (flag) {
             return false;

@@ -37,7 +37,7 @@ public class InstructorLoginController
     public InstructorLoginController() {
         mainInstance = ClaskApp.getInstance();
         serialized = SerializedCollection.getInstance();
-        curFirstName = mainInstance.getCurrentInstructor().getInstructorName();
+        curFirstName = mainInstance.getCurrentInstructor().getInstructorFirstName();
     }
 
     @FXML

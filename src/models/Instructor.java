@@ -45,5 +45,9 @@ public class Instructor extends User implements Serializable
     public String getInstructorUsername() {
         return usrName;
     }
+    
+    public String getInstructorFirstName(){
+        return fName;
+    }
 
 }

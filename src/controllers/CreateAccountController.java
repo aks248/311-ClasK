@@ -67,6 +67,13 @@ public class CreateAccountController {
     }
     
     public boolean validateAccount() {
+        
+        getErrorConfirmPass().setText("");
+        getErrorCreateFirst().setText("");
+        getErrorCreateLast().setText("");
+        getErrorCreateUser().setText("");
+        getErrorCreatePass().setText("");
+        
         setUsrType((String) getCreateTypeComboBox().getSelectionModel().getSelectedItem());
         //System.out.println(getUsrType());
         boolean flag = false;
@@ -79,7 +86,7 @@ public class CreateAccountController {
             flag = true;
         
         } else {
-            getErrorCreateFirst().setText("");
+            //getErrorCreateFirst().setText("");
         }
         
         setlName(getCreateLastName().getText());
@@ -91,7 +98,7 @@ public class CreateAccountController {
             flag = true;
         
         } else {
-            getErrorCreateLast().setText("");
+            //getErrorCreateLast().setText("");
         }
         
         setUsername(getCreateUsername().getText());
@@ -105,7 +112,7 @@ public class CreateAccountController {
             getErrorCreateUser().setText("ERROR: Username already exists.");
             flag = true;
         } else {
-            getErrorCreateUser().setText("");
+            //getErrorCreateUser().setText("");
         }
         
         
@@ -118,7 +125,7 @@ public class CreateAccountController {
             flag = true;
         
         } else {
-            getErrorCreatePass().setText("");
+            //getErrorCreatePass().setText("");
         }
 
         setConfirmPass(getCreateConfirmPswd().getText());
@@ -127,7 +134,7 @@ public class CreateAccountController {
             flag = true;
         
         } else {
-            getErrorConfirmPass().setText("");
+            //getErrorConfirmPass().setText("");
         }
         if (flag) {
             return false;
