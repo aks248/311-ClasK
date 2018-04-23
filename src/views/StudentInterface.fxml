@@ -336,38 +336,38 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="topic4Btn" mnemonicParsing="false" prefHeight="500.0" prefWidth="1200.0" text="Topic 4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
+            <Button fx:id="topic4Btn" mnemonicParsing="false" onAction="#chooseTopic4" prefHeight="500.0" prefWidth="1200.0" text="Topic 4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></Button>
-            <Button fx:id="topic3Btn" mnemonicParsing="false" prefHeight="500.0" prefWidth="1200.0" text="Topic 3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
+            <Button fx:id="topic3Btn" mnemonicParsing="false" onAction="#chooseTopic3" prefHeight="500.0" prefWidth="1200.0" text="Topic 3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></Button>
-            <Button fx:id="topic2Btn" mnemonicParsing="false" prefHeight="500.0" prefWidth="1200.0" text="Topic 2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+            <Button fx:id="topic2Btn" mnemonicParsing="false" onAction="#chooseTopic2" prefHeight="500.0" prefWidth="1200.0" text="Topic 2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></Button>
-            <Button fx:id="topic7Btn" mnemonicParsing="false" prefHeight="500.0" prefWidth="1200.0" text="Topic 7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6">
+            <Button fx:id="topic7Btn" mnemonicParsing="false" onAction="#chooseTopic7" prefHeight="500.0" prefWidth="1200.0" text="Topic 7" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></Button>
-            <Button fx:id="topic6Btn" mnemonicParsing="false" prefHeight="500.0" prefWidth="1200.0" text="Topic 6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5">
+            <Button fx:id="topic6Btn" mnemonicParsing="false" onAction="#chooseTopic6" prefHeight="500.0" prefWidth="1200.0" text="Topic 6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></Button>
-            <Button fx:id="topic5Btn" mnemonicParsing="false" prefHeight="500.0" prefWidth="1200.0" text="Topic 5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4">
+            <Button fx:id="topic5Btn" mnemonicParsing="false" onAction="#chooseTopic5" prefHeight="500.0" prefWidth="1200.0" text="Topic 5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></Button>
-            <Button fx:id="topic8Btn" mnemonicParsing="false" prefHeight="500.0" prefWidth="1200.0" text="Topic 8" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7">
+            <Button fx:id="topic8Btn" mnemonicParsing="false" onAction="#chooseTopic8" prefHeight="500.0" prefWidth="1200.0" text="Topic 8" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></Button>
-            <Button fx:id="topic1Btn" mnemonicParsing="false" prefHeight="500.0" prefWidth="1200.0" text="Topic 1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+            <Button fx:id="topic1Btn" mnemonicParsing="false" onAction="#chooseTopic1" prefHeight="500.0" prefWidth="1200.0" text="Topic 1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin></Button>
