@@ -17,6 +17,7 @@ public class ConfirmationBox {
         confirmWindow.initModality(Modality.APPLICATION_MODAL);
         confirmWindow.setTitle(title);
         confirmWindow.setMinWidth(350);
+        confirmWindow.setMinHeight(200);
         Label boxLabel = new Label();
         boxLabel.setText(message);
         

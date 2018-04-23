@@ -11,6 +11,11 @@ public class Topic {
         this.topicName = tName;
         this.messages = msgs;  
     }
+    
+    public void addMessagetoList(String type, String msgBody, String postedBy){
+        getMessages().add(new Message(type, msgBody, postedBy));
+    }
+    
 
     /**
      * @return the topicName

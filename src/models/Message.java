@@ -11,6 +11,10 @@ public class Message {
         this.messageBody = messageBody;
         this.postedBy = postedBy;
     }
+    
+    public String returnMessage(){
+        return(type + messageBody + postedBy);
+    }
 
     /**
      * @return the type

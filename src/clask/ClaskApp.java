@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import models.Course;
 import models.Instructor;
+import models.Message;
 import models.Student;
 import models.Topic;
 
@@ -26,6 +27,14 @@ public class ClaskApp extends Application {
     private Topic topic6;
     private Topic topic7;
     private Topic topic8;
+    private ArrayList<Message> messagesTp1;
+    private ArrayList<Message> messagesTp2;
+    private ArrayList<Message> messagesTp3;
+    private ArrayList<Message> messagesTp4;
+    private ArrayList<Message> messagesTp5;
+    private ArrayList<Message> messagesTp6;
+    private ArrayList<Message> messagesTp7;
+    private ArrayList<Message> messagesTp8;
     private ArrayList<Course> listOfCourses;
     private Student currentStudent;
     private Instructor currentInstructor;
@@ -40,6 +49,16 @@ public class ClaskApp extends Application {
         listOfStudents = new ArrayList<>();
         listOfInstructors = new ArrayList<>();
         listOfCourses = new ArrayList<>();
+        messagesTp1 = new ArrayList<>();
+        messagesTp2 = new ArrayList<>();
+        messagesTp3 = new ArrayList<>();
+        messagesTp4 = new ArrayList<>();
+        messagesTp5 = new ArrayList<>();
+        messagesTp6 = new ArrayList<>();
+        messagesTp7 = new ArrayList<>();
+        messagesTp8 = new ArrayList<>();
+        
+        
     }
 
     public static void setAccountMessage(boolean flag) {
@@ -288,6 +307,118 @@ public class ClaskApp extends Application {
      */
     public void setTopic8(Topic topic8) {
         this.topic8 = topic8;
+    }
+
+    /**
+     * @return the messagesTp1
+     */
+    public ArrayList<Message> getMessagesTp1() {
+        return messagesTp1;
+    }
+
+    /**
+     * @param messagesTp1 the messagesTp1 to set
+     */
+    public void setMessagesTp1(ArrayList<Message> messagesTp1) {
+        this.messagesTp1 = messagesTp1;
+    }
+
+    /**
+     * @return the messagesTp2
+     */
+    public ArrayList<Message> getMessagesTp2() {
+        return messagesTp2;
+    }
+
+    /**
+     * @param messagesTp2 the messagesTp2 to set
+     */
+    public void setMessagesTp2(ArrayList<Message> messagesTp2) {
+        this.messagesTp2 = messagesTp2;
+    }
+
+    /**
+     * @return the messagesTp3
+     */
+    public ArrayList<Message> getMessagesTp3() {
+        return messagesTp3;
+    }
+
+    /**
+     * @param messagesTp3 the messagesTp3 to set
+     */
+    public void setMessagesTp3(ArrayList<Message> messagesTp3) {
+        this.messagesTp3 = messagesTp3;
+    }
+
+    /**
+     * @return the messagesTp4
+     */
+    public ArrayList<Message> getMessagesTp4() {
+        return messagesTp4;
+    }
+
+    /**
+     * @param messagesTp4 the messagesTp4 to set
+     */
+    public void setMessagesTp4(ArrayList<Message> messagesTp4) {
+        this.messagesTp4 = messagesTp4;
+    }
+
+    /**
+     * @return the messagesTp5
+     */
+    public ArrayList<Message> getMessagesTp5() {
+        return messagesTp5;
+    }
+
+    /**
+     * @param messagesTp5 the messagesTp5 to set
+     */
+    public void setMessagesTp5(ArrayList<Message> messagesTp5) {
+        this.messagesTp5 = messagesTp5;
+    }
+
+    /**
+     * @return the messagesTp6
+     */
+    public ArrayList<Message> getMessagesTp6() {
+        return messagesTp6;
+    }
+
+    /**
+     * @param messagesTp6 the messagesTp6 to set
+     */
+    public void setMessagesTp6(ArrayList<Message> messagesTp6) {
+        this.messagesTp6 = messagesTp6;
+    }
+
+    /**
+     * @return the messagesTp7
+     */
+    public ArrayList<Message> getMessagesTp7() {
+        return messagesTp7;
+    }
+
+    /**
+     * @param messagesTp7 the messagesTp7 to set
+     */
+    public void setMessagesTp7(ArrayList<Message> messagesTp7) {
+        this.messagesTp7 = messagesTp7;
+    }
+
+    /**
+     * @return the messagesTp8
+     */
+    public ArrayList<Message> getMessagesTp8() {
+        return messagesTp8;
+    }
+
+    /**
+     * @param messagesTp8 the messagesTp8 to set
+     */
+    public void setMessagesTp8(ArrayList<Message> messagesTp8) {
+        this.messagesTp8 = messagesTp8;
     }
     
 }

@@ -41,7 +41,7 @@ public class InstructorViewController {
     private Button topic7Btn;
     @FXML
     private Button topic8Btn;
-    private int currentTopicSelected = 0;
+    private int currentTopicSelected = 1;
     private String text = "";
 
     public InstructorViewController() {
@@ -63,65 +63,75 @@ public class InstructorViewController {
     @FXML
     private void chooseTopic1(){
         this.resetButtonColor();
-        getTopic1Btn().setStyle("-fx-background-color: Blue");
-        this.setCurrentTopicSelected(0);
+        getTopic1Btn().setStyle("-fx-background-color: Blue; -fx-text-fill: White;");
+        this.setCurrentTopicSelected(1);
+        this.displayTopicMessages();
     }
     
     @FXML
     private void chooseTopic2(){
         this.resetButtonColor();
-        getTopic2Btn().setStyle("-fx-background-color: Blue");
-        this.setCurrentTopicSelected(1);
+        getTopic2Btn().setStyle("-fx-background-color: Blue; -fx-text-fill: White;");
+        this.setCurrentTopicSelected(2);
+        this.displayTopicMessages();
     }
     
     @FXML
     private void chooseTopic3(){
         this.resetButtonColor();
-        getTopic3Btn().setStyle("-fx-background-color: Blue");
-        this.setCurrentTopicSelected(2);
+        getTopic3Btn().setStyle("-fx-background-color: Blue; -fx-text-fill: White;");
+        this.setCurrentTopicSelected(3);
+        this.displayTopicMessages();
     }
     
     @FXML
     private void chooseTopic4(){
         this.resetButtonColor();
-        getTopic4Btn().setStyle("-fx-background-color: Blue");
-        this.setCurrentTopicSelected(3);
+        getTopic4Btn().setStyle("-fx-background-color: Blue; -fx-text-fill: White;");
+        this.setCurrentTopicSelected(4);
+        this.displayTopicMessages();
     }
     
     @FXML
     private void chooseTopic5(){
         this.resetButtonColor();
-        getTopic5Btn().setStyle("-fx-background-color: Blue");
-        this.setCurrentTopicSelected(4);
+        getTopic5Btn().setStyle("-fx-background-color: Blue; -fx-text-fill: White;");
+        this.setCurrentTopicSelected(5);
+        this.displayTopicMessages();
     }
     
     @FXML
     private void chooseTopic6(){
         this.resetButtonColor();
-        getTopic6Btn().setStyle("-fx-background-color: Blue");
-        this.setCurrentTopicSelected(5);
+        getTopic6Btn().setStyle("-fx-background-color: Blue; -fx-text-fill: White;");
+        this.setCurrentTopicSelected(6);
+        this.displayTopicMessages();
     }
     
     @FXML
     private void chooseTopic7(){
         this.resetButtonColor();
-        getTopic7Btn().setStyle("-fx-background-color: Blue");
-        this.setCurrentTopicSelected(6);
+        getTopic7Btn().setStyle("-fx-background-color: Blue; -fx-text-fill: White;");
+        this.setCurrentTopicSelected(7);
+        this.displayTopicMessages();
     }
     
     @FXML
     private void chooseTopic8(){
         this.resetButtonColor();
-        getTopic8Btn().setStyle("-fx-background-color: Blue");
-        this.setCurrentTopicSelected(7);
+        getTopic8Btn().setStyle("-fx-background-color: Blue; -fx-text-fill: White;");
+        this.setCurrentTopicSelected(8);
+        this.displayTopicMessages();
     }
     
     @FXML
     private void initialize() {
+        
         getUserLabel().setText(getMainInstance().getCurrentInstructor().getInstructorName());
         getCourseLabel().setText(getMainInstance().getCurrentCourse().getCourseName());
         getRoomLabel().setText(("Room #" + getMainInstance().getCurrentCourse().getRoomNum()));
-        getTopic1Btn().setStyle("-fx-background-color: Blue");
+        getTopic1Btn().setStyle("-fx-background-color: Blue; -fx-text-fill: White;");
+        this.displayTopicMessages();
     }
     
     @FXML
@@ -146,45 +156,96 @@ public class InstructorViewController {
     
     @FXML
     public void enterA() {
-        setText(getText() + "\n" + "A - " + getTextField().getText());
-        getTextArea().setText(getText());
-        //this.addMessageToTopic("Answer--",(this.getText()), "-Posted by student" );
+        //setText(getText() + "\n" + "A -- " + getTextField().getText());
+        //getTextArea().setText(getText());
+        this.addMessageToTopic("Answer----",(getTextField().getText()), "----Posted by student" );
+        this.displayTopicMessages();
         getTextField().clear();
     }
     
     @FXML
-    public void addMessageToTopic(Message messageBody){
+    public void addMessageToTopic(String type, String messageBody, String poster){
         switch (getCurrentTopicSelected()) {
-            case 0:
-                getMainInstance().getTopic1().getMessages().add(messageBody);
-                break;
             case 1:
-                getMainInstance().getTopic2().getMessages().add(messageBody);
+                mainInstance.getMessagesTp1().add(new Message(type, messageBody, poster));
                 break;
             case 2:
-                getMainInstance().getTopic3().getMessages().add(messageBody);
+                mainInstance.getMessagesTp2().add(new Message(type, messageBody, poster));
                 break;
             case 3:
-                getMainInstance().getTopic4().getMessages().add(messageBody);
+                mainInstance.getMessagesTp3().add(new Message(type, messageBody, poster));
                 break;
             case 4:
-                getMainInstance().getTopic5().getMessages().add(messageBody);
+                mainInstance.getMessagesTp4().add(new Message(type, messageBody, poster));
                 break;
             case 5:
-                getMainInstance().getTopic6().getMessages().add(messageBody);
+                mainInstance.getMessagesTp5().add(new Message(type, messageBody, poster));
                 break;
             case 6:
-                getMainInstance().getTopic7().getMessages().add(messageBody);
+                mainInstance.getMessagesTp6().add(new Message(type, messageBody, poster));
                 break;
             case 7:
-                getMainInstance().getTopic8().getMessages().add(messageBody);
+                mainInstance.getMessagesTp7().add(new Message(type, messageBody, poster));
+                break;
+            case 8:
+                mainInstance.getMessagesTp8().add(new Message(type, messageBody, poster));
                 break;
             default:
                 break;
         }
         
     }
-
+    
+    public void displayTopicMessages(){
+        String msgs = "";
+        this.getTextArea().clear();
+        switch (getCurrentTopicSelected()) {
+            case 1:
+                for(int i = 0; i < mainInstance.getMessagesTp1().size(); i++){
+                    msgs =(msgs + "\n" + mainInstance.getMessagesTp1().get(i).returnMessage());
+                }    
+                break;
+            case 2:
+                for(int i = 0; i < mainInstance.getMessagesTp2().size(); i++){
+                    msgs =(msgs + "\n" + mainInstance.getMessagesTp2().get(i).returnMessage());
+                }    
+                break;
+            case 3:
+                for(int i = 0; i < mainInstance.getMessagesTp3().size(); i++){
+                    msgs =(msgs + "\n" + mainInstance.getMessagesTp3().get(i).returnMessage());
+                }    
+                break;
+            case 4:
+                for(int i = 0; i < mainInstance.getMessagesTp4().size(); i++){
+                    msgs =(msgs + "\n" + mainInstance.getMessagesTp4().get(i).returnMessage());
+                }    
+                break;
+            case 5:
+                for(int i = 0; i < mainInstance.getMessagesTp5().size(); i++){
+                    msgs =(msgs + "\n" + mainInstance.getMessagesTp5().get(i).returnMessage());
+                }    
+                break;
+            case 6:
+                for(int i = 0; i < mainInstance.getMessagesTp6().size(); i++){
+                    msgs =(msgs + "\n" + mainInstance.getMessagesTp6().get(i).returnMessage());
+                }    
+                break;
+            case 7:
+                for(int i = 0; i < mainInstance.getMessagesTp7().size(); i++){
+                    msgs =(msgs + "\n" + mainInstance.getMessagesTp7().get(i).returnMessage());
+                }    
+                break;
+            case 8:
+                for(int i = 0; i < mainInstance.getMessagesTp8().size(); i++){
+                    msgs =(msgs + "\n" + mainInstance.getMessagesTp8().get(i).returnMessage());
+                }    
+                break;
+            default:
+                break;
+        }    
+        getTextArea().setText(msgs);
+        }
+    
 
 
     @FXML
