@@ -19,6 +19,7 @@ public class ConfirmationBox {
         confirmWindow.setMinWidth(350);
         confirmWindow.setMinHeight(200);
         Label boxLabel = new Label();
+        boxLabel.getStyleClass().add("confirm-label");
         boxLabel.setText(message);
         
         Button yesButton = new Button("Yes");
@@ -36,6 +37,7 @@ public class ConfirmationBox {
         layout.getChildren().addAll(boxLabel, yesButton, noButton);
         layout.setAlignment(Pos.CENTER);
         Scene scene = new Scene(layout);
+        scene.getStylesheets().add("/views/mainStyle.css");
         confirmWindow.setScene(scene);
         confirmWindow.showAndWait();
         

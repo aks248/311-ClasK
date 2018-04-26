@@ -22,3 +22,6 @@
 hs_err_pid*
 /ClasK/build/
 /ClasK/dist/
+/nbproject/private/
+/build/
+/dist/

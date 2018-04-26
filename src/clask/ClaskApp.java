@@ -85,14 +85,18 @@ public class ClaskApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         setpStage(primaryStage);
         Parent root = FXMLLoader.load(getClass().getResource("/views/InitialLogin.fxml"));
+        Scene scene = new Scene(root, 1200, 800);
+        scene.getStylesheets().add("/views/mainStyle.css");
         primaryStage.setTitle("Clask");
-        primaryStage.setScene(new Scene(root, 1200, 800));
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
     public void switchScenes(String fxml_file) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/views/" + fxml_file + ".fxml"));
-        getpStage().setScene(new Scene(root, 1200, 800));
+        Scene scene = new Scene(root, 1200, 800);
+        scene.getStylesheets().add("/views/mainStyle.css");
+        getpStage().setScene(scene);
         getpStage().show();
     }   
 
