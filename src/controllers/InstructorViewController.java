@@ -1,15 +1,29 @@
 package controllers;
 
 import clask.ClaskApp;
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import java.util.Optional;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.stage.FileChooser;
+import javafx.stage.Window;
 import models.Message;
 
 
-public class InstructorViewController {
+public class InstructorViewController 
+{
+    PrintWriter fileOut;
+    File of;
+    FileChooser chooser;
+    Window activeWindow;
+    Scene activeScene;
+    ArrayList<String> masterMsgList;
     private static ClaskApp mainInstance;
     @FXML
     private Label userLabel;
@@ -41,11 +55,16 @@ public class InstructorViewController {
     private Button topic7Btn;
     @FXML
     private Button topic8Btn;
+    @FXML
+    private Button exportBtn;
+    
     private int currentTopicSelected = 1;
     private String text = "";
 
-    public InstructorViewController() {
+    public InstructorViewController() 
+    {
         mainInstance = ClaskApp.getInstance();
+        masterMsgList = new ArrayList<String>();
     }
     
     @FXML
@@ -158,8 +177,9 @@ public class InstructorViewController {
     public void enterA() {
         //setText(getText() + "\n" + "A -- " + getTextField().getText());
         //getTextArea().setText(getText());
-        this.addMessageToTopic("Answer----",(getTextField().getText()), "----Posted by student" );
+        this.addMessageToTopic("Answer----",(getTextField().getText()), "----Posted by Instructor" );
         this.displayTopicMessages();
+        masterMsgList.add(getTextArea().toString());
         getTextField().clear();
     }
     
@@ -503,5 +523,58 @@ public class InstructorViewController {
      */
     public void setSubmitA(Button submitA) {
         this.submitA = submitA;
+    }
+    
+    // session export method linked to the button on the instructor interface
+    public void sessionExport()
+    {
+        
+        // scene and window variables set to the active variants according to
+        // the export button click
+        activeScene = exportBtn.getScene();
+        activeWindow = activeScene.getWindow();
+        
+        
+        // boolean to control the try/catch
+        boolean goodFile = false;
+        chooser = new FileChooser();
+        
+        // while loop that will not progress until a valid file is chosen from 
+        // the dialog
+        while(!goodFile)
+        {
+            try
+            {
+                // sets output file based on the chooser and active window
+                // selection
+                of = chooser.showSaveDialog(activeWindow);
+                
+                // printwriter that uses the chosen file
+                fileOut = new PrintWriter(of);
+                
+                for(String message : masterMsgList)
+                {
+                    fileOut.println(message);
+                }
+                
+                // closes the file writer, or else it will not appear
+                fileOut.close();
+                
+                // boolean switch to kill the loop
+                goodFile = true;
+            }
+
+            catch(IOException ex)
+            {
+                ex.printStackTrace();
+            }
+        }
+        
+    }
+    
+    // getter for the master message list; most likely unecessary
+    public ArrayList<String> getMasterMsgList()
+    {
+        return masterMsgList;
     }
 }
